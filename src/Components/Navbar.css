@@ -1,0 +1,33 @@
+/* Reset default margin and padding */
+
+
+  
+  header {
+    background-color: #8b8b8b;
+    /* padding: 20px; */
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+  }
+  
+  .title h1 {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    color:black;
+    height: 10vh;
+  }
+  
+  nav ul {
+    list-style-type: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+  }

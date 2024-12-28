@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet My Helper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Include border and padding in element's total width and height */
+        }
+
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center; /* Align all text to the center */
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Background color */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        .circle {
+            width: 200px; /* Circle width */
+            height: 200px; /* Circle height */
+            border-radius: 50%; /* Make it a circle */
+            background-color:lightslategrey; /* Circle background color */
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center the icon */
+            margin-bottom: 20px; /* Margin between circles */
+        }
+
+        .circle i {
+            font-size: 80px; /* Icon size */
+            color: #fff; /* Icon color */
+        }
+
+        .button {
+            font-size: 18px; /* Button text size */
+            color: #fff; /* Button text color */
+            background-color: darkblue; /* Button background color */
+            padding: 10px 20px; /* Button padding */
+            border: none; /* Remove button border */
+            border-radius: 5px; /* Button border radius */
+            cursor: pointer; /* Cursor style */
+            margin-bottom: 20px; /* Margin between buttons */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle"> <!-- First circle -->
+            <i class="fas fa-briefcase"></i> <!-- Briefcase icon -->
+        </div>
+        <button class="button" onclick="location.href='carereceiverprof.html'">Get Care</button>
+        <div class="circle"> <!-- Second circle -->
+            <i class="fas fa-user"></i> <!-- User icon -->
+        </div>
+        <button class="button" onclick="location.href='caregiversignupf.html'">Get Job</button>
+    </div>
+</body>
+</html>

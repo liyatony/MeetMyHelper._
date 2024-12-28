@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Meet My Helper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Include border and padding in element's total width and height */
+        }
+
+        /* Basic styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center; /* Align all text to the center */
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between; /* Align items to the opposite corners */
+            align-items: center;
+        }
+
+        .title {
+            /* Add margin to create space between title and nav */
+            margin-left: 20px;
+        }
+
+        .title h1 {
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            text-align: left; /* Align title to the left */
+            color: #333;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h2 {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify; /* Align text justified */
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-wrapper {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 40px; /* Adjust spacing between image and text */
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            float: right; /* Float the image to the right */
+            margin-left: 50px;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+        }
+
+        .text-box {
+            text-align: left;
+            max-width: 600px; /* Limit the width of the text box */
+            margin-top: 20px; /* Add space above the text box */
+            margin-bottom: 20px; /* Adjust space below the text box */
+        }
+
+        .mission-vision-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px; /* Add margin between the sections */
+        }
+
+        .mission-box,
+        .vision-box,
+        .values-box {
+            flex: 1; /* Each box takes up equal space */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .mission-box:hover,
+        .vision-box:hover,
+        .values-box:hover {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .mission-box h2::before,
+        .vision-box h2::before,
+        .values-box h2::before {
+            margin-right: 10px;
+        }
+
+        ul {
+            text-align: left;
+            margin-top: 20px;
+            color: #666;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Add margin-top to create space between header and about section */
+        #about {
+            margin-top: 70px;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>Meet My Helper</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="newindex.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="text-box">
+                <p>Welcome to Meet My Helper, your trusted source for compassionate care and personalized support. Our mission is to provide high-quality caregiving services to individuals and families in need. With a team of dedicated professionals, we strive to make a positive difference in the lives of our clients by offering reliable assistance and genuine care.</p>
+                <p>At Meet My Helper, we understand the importance of maintaining independence and dignity while receiving care. That's why our caregivers are trained to provide respectful and compassionate assistance tailored to each individual's unique needs and preferences.</p>
+                <p>Whether you're looking for assistance with daily tasks, companionship, or specialized care, we're here to help. Contact us today to learn more about our services and how we can support you and your loved ones.</p>
+            </div>
+            <div class="image-wrapper">
+                <img src="hands.jpg" alt="Our Team">
+            </div>
+        </div>
+    </section>
+
+    <section id="mission" class="mission-vision-section">
+        <div class="mission-box box">
+            <h2>Our Mission</h2>
+            <div class="text-box">
+                <p>Our mission is to provide compassionate care and personalized support to individuals and families in need. We strive to make a positive difference in their lives by offering reliable assistance and genuine care.</p>
+            </div>
+        </div>
+
+        <div class="vision-box box">
+            <h2>Our Vision</h2>
+            <div class="text-box" style="text-align: center;">
+                <p style="text-align: justify;">Our vision is to become the leading provider of caregiving services, known for our commitment to excellence, compassion, and innovation. We aim to set the standard for quality care and make a meaningful impact in the lives of those we serve.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="values">
+        <h2>Our Values</h2>
+        <div class="text-box" style="text-align: center;">
+            <p style="text-align: justify;">At Meet My Helper, our values guide everything we do. We are committed to:</p>
+            <ul>
+                <li>Compassion: Showing empathy and kindness to all individuals.</li>
+                <li>Respect: Treating each person with dignity and respect.</li>
+                <li>Integrity: Upholding honesty, transparency, and ethical conduct.</li>
+                <li>Excellence: Striving for excellence in everything we do.</li>
+                <li>Teamwork: Collaborating with clients, families, and colleagues to achieve the best outcomes.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Meet My Helper. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

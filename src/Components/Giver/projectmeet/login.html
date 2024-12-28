@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Meet My Helper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Include border and padding in element's total width and height */
+        }
+
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center; /* Align all text to the center */
+            margin: 0;
+            padding: 0;
+            background-image: url('backgrd-signup.jpg'); /* Replace 'caregiver.jpeg' with the path to your image */
+            background-size: cover; /* Cover the entire background */
+            background-position: center top 25px; /* Adjust the vertical position */
+        }
+
+        header {
+            background-color: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title {
+            /* width: 100%; */
+            /* Make the title span the full width */
+        }
+
+        .title h1 {
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            text-align: left; /* Align title to the left */
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 80px auto 0; /* Adjust top margin to move downward */
+            background-color: rgba(255, 255, 255, 0.8); /* Add background color with transparency */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add box shadow for depth */
+        }
+
+        .login-form {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .login-form input {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px; /* Adjust margin top for the button */
+        }
+
+        .forgot-password {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .forgot-password a {
+            display: inline-block; /* Add display inline block for proper alignment */
+        }
+
+        .forgot-password i {
+            margin-right: 5px; /* Adjust margin between icon and text */
+        }
+
+        .sign-up {
+            margin-top: 20px;
+        }
+
+        /* Google Button Styles */
+        .google-btn {
+            background-color: #dd4b39;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .google-btn i {
+            margin-right: 10px;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>Meet My Helper</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="login-container">
+        <h2>Welcome to Meet My Helper</h2>
+        <div class="error-message" id="error-message"></div>
+        <form class="login-form" id="login-form">
+            <input type="text" id="email" placeholder="User ID">
+            <input type="password" id="password" placeholder="Password">
+         <div class="forgot-password">
+                <a href="forgot.html"><i class="fas fa-question-circle"></i> Forgot Password?</a>
+            </div>
+            
+            <button type="submit">Login</button>
+        </form>
+        <button class="google-btn" onclick="window.location.href='choice.html'">
+            <i class="fab fa-google"></i> Sign in with Google
+        </button>
+        <div class="sign-up">
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Meet My Helper. All rights reserved.</p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+    apiKey: "AIzaSyBIwqy3LUzOK5KXJmtPYBvCbXF5QMcWDvI",
+    authDomain: "meetmyhelper-aea5f.firebaseapp.com",
+    projectId: "meetmyhelper-aea5f",
+    storageBucket: "meetmyhelper-aea5f.appspot.com",
+    messagingSenderId: "910360998110",
+    appId: "1:910360998110:web:450c8012ec1816e9a2124f"
+  };
+  const app = initializeApp(firebaseConfig);
+
+        // Get elements
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const form = document.getElementById('login-form');
+        const errorMessage = document.getElementById('error-message');
+
+        // Login form submission
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            // Check if email and password are not empty
+            if (!email || !password) {
+                errorMessage.textContent = "Email and password cannot be empty.";
+                return;
+            }
+
+            try {
+                // Sign in with email and password
+                await firebase.auth().signInWithEmailAndPassword(email, password);
+                // Redirect to choice.html upon successful login
+                window.location.href = "choice.html";
+            } catch (error) {
+                // Handle login errors
+                const errorCode = error.code;
+                const errorMessageText = error.message;
+                if (errorCode === 'auth/user-not-found' || errorCode === 'auth/wrong-password') {
+                    errorMessage.textContent = "Invalid email or password.";
+                } else {
+                    errorMessage.textContent = errorMessageText;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

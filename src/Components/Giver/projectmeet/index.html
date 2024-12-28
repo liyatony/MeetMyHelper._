@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet My Helper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Include border and padding in element's total width and height */
+        }
+
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center; /* Align all text to the center */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title {
+            /* width: 100%; */
+            /* Make the title span the full width */
+        }
+
+        .title h1 {
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            text-align: left; /* Align title to the left */
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #about h2, #services h2, #contact h2 {
+            text-align: center; /* Center all section headings */
+            margin-bottom: 20px; /* Add space after each heading */
+        }
+
+        /* Style for slider buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 100;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Adjustments for spacing */
+        #about {
+            padding-left: 20%; /* Add space to the left */
+            padding-right: 20%; /* Add space to the right */
+            text-align: justify; /* Justify text */
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .image-wrapper {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px; /* Adjust spacing between image and text */
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+        }
+
+        .text-box {
+            flex: 1;
+            text-align: left;
+        }
+
+        .slide img {
+            width: 800px; /* Adjust the width to make images larger */
+            height: auto; /* Maintain the aspect ratio */
+        }
+
+        #get-started {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+        }
+
+        .content {
+            margin-bottom: 30px;
+        }
+
+        .get-started-button {
+            text-align: center;
+        }
+
+        .get-started-button a {
+            background-color: indigo; /* Add your desired color here */
+            color: white; /* Text color */
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .get-started-button a i {
+            margin-right: 10px;
+            color: white; /* Add your desired color here */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>Meet My Helper</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="banner">
+        <div class="slides">
+            <div class="slide"><img src="carepic.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="care3.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="caregiver.jpeg" alt="Image 3"></div>
+            <!-- Add more images as needed -->
+        </div>
+        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    </section>
+
+    <section id="about">
+        <div class="about-content">
+            <div class="image-wrapper">
+                <img src="hands.jpg" alt="Your Image">
+            </div>
+            <div class="text-box">
+                <p>Welcome to Meet My Helper, your trusted source for compassionate care and personalized support. Our mission is to provide high-quality caregiving services to individuals and families in need. With a team of dedicated professionals, we strive to make a positive difference in the lives of our clients by offering reliable assistance and genuine care.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="get-started">
+        <div class="content">
+            <h2>Get Started</h2>
+            <p>Ready to experience compassionate care and personalized support? Get in touch with us today!</p>
+        </div>
+        <div class="get-started-button">
+            <a href="login.html"><i class="fas fa-hands-helping"></i> Get Started</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>We're here to help!<br>Please feel free to reach out about any concerns.</p>
+        <div class="contact-details">
+            <p><strong>Location:</strong> Kerala, India</p>
+            <p><strong>Phone:</strong> +91 8621489678</p>
+            <p><strong>Email:</strong> meetmyhelper@gmail.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Meet My Helper. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+</body>
+</html>

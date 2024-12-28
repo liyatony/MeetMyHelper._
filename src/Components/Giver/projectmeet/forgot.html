@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - Meet My Helper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Include border and padding in element's total width and height */
+        }
+
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center; /* Align all text to the center */
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Set background color */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Set minimum height to full viewport height */
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: left;
+        }
+
+        header h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .forgot-password-form input {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .forgot-password-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto; /* Push footer to bottom */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meet My Helper</h1>
+    </header>
+
+    <section>
+        <h2>Forgot Password</h2>
+        <form class="forgot-password-form" action="reset_password.php" method="post"> 
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            <button type="button" onclick="handleForgotPassword()">Reset Password</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Meet My Helper. All rights reserved.</p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+    apiKey: "AIzaSyBIwqy3LUzOK5KXJmtPYBvCbXF5QMcWDvI",
+    authDomain: "meetmyhelper-aea5f.firebaseapp.com",
+    projectId: "meetmyhelper-aea5f",
+    storageBucket: "meetmyhelper-aea5f.appspot.com",
+    messagingSenderId: "910360998110",
+    appId: "1:910360998110:web:450c8012ec1816e9a2124f"
+  };
+  const app = initializeApp(firebaseConfig);
+      
+        // Function to handle password reset
+        function handleForgotPassword() {
+          const email = document.getElementById('email').value;
+          
+          firebase.auth().sendPasswordResetEmail(email)
+            .then(() => {
+              // Password reset email sent successfully
+              alert("Password reset email sent. Please check your email inbox.");
+            })
+            .catch((error) => {
+              // Handle errors
+              console.error('Error sending password reset email:', error.message);
+              alert(error.message);
+            });
+        }
+      </script>
+</body>
+</html>
